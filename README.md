@@ -33,8 +33,8 @@ pip install -r requirements.txt
 
 ## Authors
 
-- Ryan Zeitouny (equal contribution)
-- Zane Salman (equal contribution)
+- Ryan Zeitouny (co-first author, equal contribution)
+- Zane Salman (co-first author, equal contribution)
 - Samer Salman
 - Anita Bhansali
 
