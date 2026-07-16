@@ -9,10 +9,17 @@ in neurosurgical ICU patients, derived from the MIMIC-IV database.
   Run in order against raw MIMIC-IV tables to produce the enriched cohort CSV
   (`neurosurg_cohort_enriched.csv`) that the modeling notebook expects, plus the
   descriptive statistics, regression tables, and figures used in the manuscripts.
-- `notebooks/Neuros2.ipynb` — modeling pipeline: takes the enriched cohort CSV from
-  `pipeline/` and does feature engineering, model training (logistic regression and
-  XGBoost), evaluation, and SHAP-based interpretability. Ends by saving its own trained
-  model files with `joblib.dump(...)`.
+- `notebooks/Neuros2_pub2_model_clean.ipynb` — **canonical** Publication 2 modeling
+  notebook: takes the enriched cohort CSV from `pipeline/` and does feature engineering,
+  model training (logistic regression and XGBoost), evaluation, fairness/subgroup
+  analysis, and SHAP-based interpretability. Ends by saving its own trained model files
+  with `joblib.dump(...)`. All configurable paths (`DRIVE`, `MIMIC`, `OUT`, `COHORT`) live
+  in a single early cell — update those four variables to point at your own data before
+  running.
+- `notebooks/Neuros2.ipynb` — the original, unedited working notebook, kept for
+  provenance. It includes abandoned file-search attempts, duplicate path definitions, and
+  Colab-session-specific packaging/download cells that only work inside a live Colab
+  runtime. Use the `_clean` version above to actually run or read the pipeline.
 - `models/` — trained model artifacts (`.joblib`) for both outcomes, provided as a
   reference/reproducibility snapshot:
   - `lr_model_*` / `xgb_model_*` — logistic regression and XGBoost classifiers
@@ -38,7 +45,7 @@ The `pipeline/` scripts are written against MIMIC-IV's own table structure (`icu
 arbitrary hospital export. Adapting the scripts to a genuinely different schema would
 require editing the column/table references in `pipeline/step1_cohort_extraction.py`.
 
-## Expected input schema (`notebooks/Neuros2.ipynb`)
+## Expected input schema (`notebooks/Neuros2_pub2_model_clean.ipynb`)
 
 The modeling notebook doesn't care where its input CSV comes from, but it does require
 these columns to already exist, with these names, in the cohort file you point it at
