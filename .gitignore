@@ -1,0 +1,15 @@
+# Data — never commit raw MIMIC-IV data
+data/
+*.csv.gz
+*.csv
+
+# Notebook / Python cruft
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
