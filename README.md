@@ -31,6 +31,15 @@ Code reflects the current pipeline as developed in Google Colab. Model artifacts
 pip install -r requirements.txt
 ```
 
+## Authors
+
+- Ryan Zeitouny (equal contribution)
+- Zane Salman (equal contribution)
+- Samer Salman
+- Anita Bhansali
+
+See [CITATION.cff](CITATION.cff) for citation metadata.
+
 ## License
 
 See [LICENSE](LICENSE).

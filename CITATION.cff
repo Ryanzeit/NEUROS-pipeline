@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below. Ryan Zeitouny and Zane Salman contributed equally to this work."
+title: "NEUROS Pipeline"
+version: 0.1.0
+date-released: 2026-07-16
+authors:
+  - family-names: Zeitouny
+    given-names: Ryan
+    email: ryan.zeitouny@gmail.com
+  - family-names: Salman
+    given-names: Zane
+    email: zgs277@eid.utexas.edu
+  - family-names: Salman
+    given-names: Samer
+    email: samer.salman@bcm.edu
+  - family-names: Bhansali
+    given-names: Anita
+repository-code: "https://github.com/Ryanzeit/NEUROS-pipeline"
