@@ -38,6 +38,28 @@ The `pipeline/` scripts are written against MIMIC-IV's own table structure (`icu
 arbitrary hospital export. Adapting the scripts to a genuinely different schema would
 require editing the column/table references in `pipeline/step1_cohort_extraction.py`.
 
+## Expected input schema (`notebooks/Neuros2.ipynb`)
+
+The modeling notebook doesn't care where its input CSV comes from, but it does require
+these columns to already exist, with these names, in the cohort file you point it at
+(this is exactly what `pipeline/` produces from MIMIC-IV):
+
+- **Identifiers / splitting**: `subject_id`, `stay_id`, `split`, `anchor_year_group`, `year_numeric`
+- **Outcomes**: `in_hospital_mortality`, `readmit_30day`
+- **Demographics**: `age`, `male`, `gender`, `race_group`, `insurance_group`, `non_english`
+- **Clinical**: `gcs_admission`, `sofa_score`, `elixhauser_score`, `ventilated`/`ventilation`, `neurosurg_category`, `primary_dx`
+- **Comorbidities** (Elixhauser categories, one column per flag): `congestive_heart_failure`,
+  `cardiac_arrhythmia`, `valvular_disease`, `pulmonary_circulation`, `peripheral_vascular`,
+  `hypertension_uncomplicated`, `hypertension_complicated`, `paralysis`, `other_neurological`,
+  `chronic_pulmonary`, `diabetes_uncomplicated`, `diabetes_complicated`, `hypothyroidism`,
+  `renal_failure`, `liver_disease`, `coagulopathy`, `obesity`, `weight_loss`,
+  `fluid_electrolyte`, `blood_loss_anemia`, `deficiency_anemia`, `alcohol_abuse`,
+  `drug_abuse`, `depression`
+
+To use a non-MIMIC-IV dataset, you'd need to derive all of the above from your own data
+(most directly by writing your own version of `pipeline/step1_cohort_extraction.py` that
+outputs this same schema) — the notebook itself is otherwise data-source-agnostic.
+
 ## Status
 
 Code reflects the current pipeline as developed in Google Colab. Model artifacts in
