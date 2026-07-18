@@ -20,6 +20,16 @@ in neurosurgical ICU patients, derived from the MIMIC-IV database.
   provenance. It includes abandoned file-search attempts, duplicate path definitions, and
   Colab-session-specific packaging/download cells that only work inside a live Colab
   runtime. Use the `_clean` version above to actually run or read the pipeline.
+- `notebooks/Neuros3_debiasing.ipynb` — **Publication 3** notebook: a copy of the Pub 2
+  clean notebook with debiasing experiments layered on top (Sections 17-24), targeting
+  the two readmission fairness gaps from Pub 2 (Medicaid EOD +0.444, Other-race EOD
+  −0.294). Runs and compares three methods against the untouched Pub 2 baseline:
+  reweighting (sample-weighted logistic regression), resampling (SMOTENC targeted at the
+  two affected subgroups), and fairness-constrained optimization (fairlearn's
+  `ExponentiatedGradient` under an `EqualizedOdds` constraint over race × insurance).
+  Produces `pub3_debiasing_comparison.csv` and comparison plots. Requires `fairlearn` and
+  `imbalanced-learn` (in `requirements.txt`). Config cell is unchanged from Pub 2
+  (Colab paths) — update `DRIVE`/`MIMIC`/`OUT`/`COHORT` if running elsewhere.
 - `models/` — trained model artifacts (`.joblib`) for both outcomes, provided as a
   reference/reproducibility snapshot:
   - `lr_model_*` / `xgb_model_*` — logistic regression and XGBoost classifiers
@@ -70,8 +80,9 @@ outputs this same schema) — the notebook itself is otherwise data-source-agnos
 ## Status
 
 Code reflects the current pipeline as developed in Google Colab. Model artifacts in
-`models/` are from preliminary runs on the original MIMIC-IV cohort; full training/
-evaluation, and the debiasing work planned for Publication 3, are still in progress.
+`models/` are from preliminary runs on the original MIMIC-IV cohort. Publication 3
+debiasing experiments (`notebooks/Neuros3_debiasing.ipynb`) are drafted and awaiting a
+first run in Colab to validate results before they're reported in the manuscript.
 
 ## Setup
 

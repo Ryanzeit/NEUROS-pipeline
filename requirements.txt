@@ -6,3 +6,6 @@ shap
 joblib
 matplotlib
 statsmodels
+imbalanced-learn
+fairlearn
+scipy
