@@ -23,12 +23,17 @@ in neurosurgical ICU patients, derived from the MIMIC-IV database.
 - `notebooks/Neuros3_debiasing.ipynb` — **Publication 3** notebook: a copy of the Pub 2
   clean notebook with debiasing experiments layered on top (Sections 17-24), targeting
   the two readmission fairness gaps from Pub 2 (Medicaid EOD +0.444, Other-race EOD
-  −0.294). Runs and compares three methods against the untouched Pub 2 baseline:
+  −0.294). Runs and compares four methods against the untouched Pub 2 baseline:
   reweighting (sample-weighted logistic regression), resampling (SMOTENC targeted at the
-  two affected subgroups), and fairness-constrained optimization (fairlearn's
-  `ExponentiatedGradient` under an `EqualizedOdds` constraint over race × insurance).
-  Produces `pub3_debiasing_comparison.csv` and comparison plots. Requires `fairlearn` and
-  `imbalanced-learn` (in `requirements.txt`). Config cell is unchanged from Pub 2
+  two affected subgroups), fairness-constrained optimization (fairlearn's
+  `ExponentiatedGradient` under an `EqualizedOdds` constraint over race × insurance), and
+  per-group threshold optimization (fairlearn's `ThresholdOptimizer`, Section 21B) — added
+  after the first three all improved one gap at the expense of the other, since Medicaid
+  is over-predicted while Other-race is under-predicted (opposite directions); a single
+  blanket correction can't fix both, so this method sets an independent decision threshold
+  per group instead. Produces `pub3_debiasing_comparison.csv` and comparison plots.
+  Requires `fairlearn` and `imbalanced-learn` (in `requirements.txt`). Config cell is
+  unchanged from Pub 2
   (Colab paths) — update `DRIVE`/`MIMIC`/`OUT`/`COHORT` if running elsewhere.
 - `models/` — trained model artifacts (`.joblib`) for both outcomes, provided as a
   reference/reproducibility snapshot:
