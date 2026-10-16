@@ -3,7 +3,7 @@
 # "Racial, socioeconomic, and insurance-based disparities in neurosurgical
 #  ICU outcomes: a MIMIC-IV cohort analysis"
 #
-# MIMIC-IV v3.0 | ICD-10 only | Google Colab
+# MIMIC-IV v3.1 | ICD-10 only | Google Colab
 # Output: outputs/neurosurg_cohort_raw.csv
 # =============================================================================
 

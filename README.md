@@ -20,6 +20,16 @@ in neurosurgical ICU patients, derived from the MIMIC-IV database.
   provenance. It includes abandoned file-search attempts, duplicate path definitions, and
   Colab-session-specific packaging/download cells that only work inside a live Colab
   runtime. Use the `_clean` version above to actually run or read the pipeline.
+- `pipeline/step7_pub2_v2_revision.py` — **Publication 2 v2 re-run** (release 2.0.0). A single
+  Colab-style script that reproduces the Pub 2 cohort counts and the original AUROCs, then adds
+  calibration slope and intercept (with out-of-fold recalibration), the 0.05-0.95 threshold
+  sweep for equal opportunity difference and net benefit, age and language subgroups,
+  survivors-only 30-day readmission, patient-level (cluster) bootstrap intervals,
+  Benjamini-Hochberg-adjusted P values, benchmark models, Riley sample-size criteria, and
+  missing-data and first-admission sensitivity analyses. It writes one aggregate JSON plus
+  figures and a model card; no patient-level data are written. Edit the CONFIG block
+  (`BASE`, `OUT_DIR`, `COHORT_PATH`) for your environment. Run it after `pipeline/` has
+  produced `neurosurg_cohort_enriched.csv`.
 - `notebooks/Neuros3_debiasing.ipynb` — **Publication 3** notebook: a copy of the Pub 2
   clean notebook with debiasing experiments layered on top (Sections 17-24), targeting
   the two readmission fairness gaps from Pub 2 (Medicaid EOD +0.444, Other-race EOD

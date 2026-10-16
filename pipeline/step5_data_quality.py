@@ -28,7 +28,7 @@ def log(msg=''):
 
 log("="*60)
 log("DATA QUALITY & CONSORT FLOW REPORT")
-log("Publication 1 — Neurosurgical ICU Cohort (MIMIC-IV v3.0)")
+log("Publication 1 — Neurosurgical ICU Cohort (MIMIC-IV v3.1)")
 log("="*60)
 
 log(f"\nFinal analytic cohort: N = {len(cohort):,}")
