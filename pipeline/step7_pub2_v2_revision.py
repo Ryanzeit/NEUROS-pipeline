@@ -715,7 +715,7 @@ with open(OUT_DIR + "pub2_v2_results.json", "w") as f: json.dump(_clean(R), f, i
 
 mm = R["metrics"]["mortality"]["lr"]; rr = R["metrics"]["readmission"]["lr"]
 card = f"""NEUROS MODEL CARD (v2) - generated {R['meta']['date']}
-Source: MIMIC-IV (see manuscript for version); single centre (BIDMC), 2008-2022.
+Source: MIMIC-IV version 3.1; single centre (BIDMC), 2008-2022.
 Cohort: 4,281 admissions / 3,993 patients. Temporal split by patient anchor-year group: train 2008-2019 (n=3,066), test 2020-2022 (n=1,215).
 Intended use: research and audit only; prediction at ICU admission; NOT for individual triage, treatment limitation or discharge decisions.
 Outcomes: in-hospital mortality (all admissions); 30-day readmission among hospital survivors.

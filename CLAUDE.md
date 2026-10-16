@@ -2,7 +2,7 @@
 
 ## Program Overview
 **"Who Does Neurosurgical AI Leave Behind?"**
-A multi-publication research program investigating disparities in neurosurgical ICU outcomes and algorithmic fairness in predictive modeling. Data: MIMIC-IV v3.0 via PhysioNet. Co-authors: Ryan and Zane Salman.
+A multi-publication research program investigating disparities in neurosurgical ICU outcomes and algorithmic fairness in predictive modeling. Data: MIMIC-IV v3.1 via PhysioNet. Co-authors: Ryan and Zane Salman.
 
 ## Publication Sequence
 - **Pub 1a** — Descriptive cohort study of disparities (4,281 admissions). Complete, citation-ready.
@@ -15,7 +15,7 @@ A multi-publication research program investigating disparities in neurosurgical 
 ---
 
 ## Data
-- **Source:** MIMIC-IV v3.0
+- **Source:** MIMIC-IV v3.1
 - **Cohort file:** `Copy of neurosurg_cohort_enriched.csv`
 - **Google Drive layout:** `DRIVE/MIMIC 4/` for raw MIMIC files; `DRIVE/Project Neuros/` for outputs
 - **Cohort:** 4,281 adult neurosurgical ICU admissions (TBI, hemorrhagic stroke, surgically treated ischemic stroke, craniotomy, spine surgery, brain tumor)

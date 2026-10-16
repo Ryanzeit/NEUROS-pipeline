@@ -92,7 +92,7 @@ def excl(ax,x,y,w,h,text):
     ax.add_patch(FancyBboxPatch((x-w/2,y-h/2),w,h,boxstyle="round,pad=0.1",facecolor='#FFF3CD',edgecolor='#E08214',linewidth=1.5))
     ax.text(x,y,text,ha='center',va='center',fontsize=9,multialignment='center')
 
-box(ax,5,13,7,0.9,"All MIMIC-IV v3.0 ICU admissions\n(hosp + icu tables merged)")
+box(ax,5,13,7,0.9,"All MIMIC-IV v3.1 ICU admissions\n(hosp + icu tables merged)")
 arr(ax,5,12.55,5,11.85)
 box(ax,5,11.5,7,0.9,"Filtered: ICD-10 neurosurgical diagnoses/procedures\n(TBI, hemorrhagic stroke, craniotomy, spine, brain tumor)")
 excl(ax,8.8,11.5,2.8,0.9,"Excluded:\nICD-9 only\nNon-neurosurgical")
@@ -112,7 +112,7 @@ arr(ax,5,5.05,5,4.35)
 box(ax,5,4.0,7,1.1,
     f"Final Analytic Cohort: N = {n_final:,}\nPrimary Outcome: In-Hospital Mortality\nSecondary: ICU LOS, 30-Day Readmission, Time to ICU",
     fs=10,fc='#D4EDDA',ec='#28A745')
-ax.set_title("Patient Inclusion/Exclusion Flow Diagram\nNeurosurgical ICU Cohort — MIMIC-IV v3.0", fontsize=13, pad=15)
+ax.set_title("Patient Inclusion/Exclusion Flow Diagram\nNeurosurgical ICU Cohort — MIMIC-IV v3.1", fontsize=13, pad=15)
 plt.tight_layout(); plt.savefig(FIG+'figure6_consort_flow.png'); plt.close(); print("Figure 6 saved.")
 
 # -----------------------------------------------------------------------------
